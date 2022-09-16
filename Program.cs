@@ -30,11 +30,12 @@ string[] GetNewArray(string[] array)
 void PrintArray(string[] ar)
 {
     int k= ar.Length;
+    string quote = "\"";
     Write("[");
     for (int i = 0; i < ar.Length; i++)
     {
-        Write($"'{ar[i]}'");
-        if(i!=ar.Length-1) Write(",");
+        Write($"{quote}{ar[i]}{quote}");
+        if(i!=ar.Length-1) Write(", ");
     }
     Write("]");
 }
