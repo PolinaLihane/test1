@@ -3,24 +3,24 @@
 // Первоначальный массив можно ввести с клавиатуры или задать на старте выполнения алгоритма.
 using static System.Console;
 Clear();
-string[] array = {"Hello","2","World",":)"};
-string[] NewArray=GetNewArray(array);
+string[] array = { "Hello", "2", "World", ":)" };
+string[] NewArray = GetNewArray(array);
 PrintArray(NewArray);
 
-string[] GetNewArray(string[] array)  
+string[] GetNewArray(string[] array)
 {
-    int newLength=0;
+    int newLength = 0;
     for (int i = 0; i < array.Length; i++) //посчитаем кол-во элементов длиной менее 3
     {
-        if (array[i].Length<=3) newLength++;
+        if (array[i].Length <= 3) newLength++;
     }
-    string[] newAr=new string[newLength];
-    int j=0;
+    string[] newAr = new string[newLength];
+    int j = 0;
     for (int i = 0; i < array.Length; i++)  //соберем новый массив
     {
-        if (array[i].Length<=3) 
+        if (array[i].Length <= 3)
         {
-            newAr[j]=array[i];
+            newAr[j] = array[i];
             j++;
         }
     }
@@ -29,13 +29,13 @@ string[] GetNewArray(string[] array)
 
 void PrintArray(string[] ar)
 {
-    int k= ar.Length;
+    int k = ar.Length;
     string quote = "\"";
     Write("[");
     for (int i = 0; i < ar.Length; i++)
     {
         Write($"{quote}{ar[i]}{quote}");
-        if(i!=ar.Length-1) Write(", ");
+        if (i != ar.Length - 1) Write(", ");
     }
     Write("]");
 }
